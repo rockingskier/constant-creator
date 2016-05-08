@@ -1,0 +1,43 @@
+{
+  "name": "constant-creator",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build:clean": "rimraf dist",
+    "build:compile": "NODE_ENV=production webpack -p",
+    "build": "npm run build:clean && npm run build:compile",
+    "test:lint": "eslint src test --ext js,jsx",
+    "test:mocha": "NODE_ENV=test mocha './src/**/*.spec.js' --compilers js:babel-core/register",
+    "test": "npm run test:lint && npm run test:mocha",
+    "prepublish": "npm run test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rockingskier/constant-creator.git"
+  },
+  "author": "Ben Delevingne (https://github.com/rockingskier)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rockingskier/constant-creator/issues"
+  },
+  "homepage": "https://github.com/rockingskier/constant-creator#readme",
+  "devDependencies": {
+    "babel-cli": "^6.8.0",
+    "babel-core": "^6.8.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^8.0.0",
+    "eslint-plugin-import": "^1.7.0",
+    "expect": "^1.19.0",
+    "mocha": "^2.4.5",
+    "rimraf": "^2.5.2",
+    "webpack": "^1.13.0"
+  }
+}
