@@ -1,8 +1,9 @@
 export default class ConstantCreator {
-  constructor(namespace, delimiter = '/') {
+  constructor(namespace, options = {}) {
     if (!namespace && process.env.NODE_ENV !== 'production') {
       throw new Error('ConstantCreator: Creation requires a namespace');
     }
+    const { delimiter = '/' } = options;
 
     this.namespaces = [].concat(namespace);
     this.delimiter = delimiter;

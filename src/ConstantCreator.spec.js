@@ -43,7 +43,9 @@ describe('ConstantCreator', () => {
     let expected = undefined;
     let actual = undefined;
 
-    constantCreator = new ConstantCreator('FOO', 'DELIMITER');
+    constantCreator = new ConstantCreator('FOO', {
+      delimiter: 'DELIMITER',
+    });
 
     expected = 'FOODELIMITERBAR';
     actual = constantCreator.createConstant('BAR');
