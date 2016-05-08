@@ -12,7 +12,7 @@
     "build:clean": "rimraf dist",
     "build:compile": "NODE_ENV=production webpack -p",
     "build": "npm run build:clean && npm run build:compile",
-    "test:lint": "eslint src test --ext js,jsx",
+    "test:lint": "eslint src",
     "test:mocha": "NODE_ENV=test mocha './src/**/*.spec.js' --compilers js:babel-core/register",
     "test": "npm run test:lint && npm run test:mocha",
     "prepublish": "npm run test && npm run build"
